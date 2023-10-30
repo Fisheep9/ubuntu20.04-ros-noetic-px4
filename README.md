@@ -31,6 +31,15 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 ```sh
 docker build -t ros:v1 .
+
+启动容器
+
+```sh
+sudo docker run -it --network host --privileged \
+--env="DISPLAY" \
+--env="QT_X11_NO_MITSHM=1" \
+--volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
+ros:noetic
 ```
 
 [换源](https://www.yisu.com/ask/4042.html)
