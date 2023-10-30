@@ -42,6 +42,7 @@ sudo docker run -it --network host --privileged \
 --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
 ros:noetic
 
+sudo apt-get update
 sudo apt-get install vim
 ```
 
