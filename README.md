@@ -31,6 +31,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 ```sh
 docker build -t ros:v1 .
+```
 
 启动容器
 
