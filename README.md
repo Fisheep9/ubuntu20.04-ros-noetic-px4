@@ -41,6 +41,8 @@ sudo docker run -it --network host --privileged \
 --env="QT_X11_NO_MITSHM=1" \
 --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
 ros:noetic
+
+sudo apt-get install vim
 ```
 
 [换源](https://www.yisu.com/ask/4042.html)
@@ -48,6 +50,7 @@ ros:noetic
 [PX4安装](https://docs.px4.io/main/en/dev_setup/dev_env_linux_ubuntu.html#ros-gazebo-classic)
 
 ```sh
+sudo apt install git
 git clone https://github.com/PX4/PX4-Autopilot.git --recursive
 bash ./PX4-Autopilot/Tools/setup/ubuntu.sh
 ```
