@@ -6,7 +6,7 @@ ubuntu20.04-ros-noetic-px4
 
 [dockerfile](https://github.com/osrf/docker_images/blob/df19ab7d5993d3b78a908362cdcd1479a8e78b35/ros/noetic/ubuntu/focal/ros-base/Dockerfile)
 
-docker 走代理
+在docker内配置走代理
 
 ```sh
 export http_proxy=http://127.0.0.1:7890
