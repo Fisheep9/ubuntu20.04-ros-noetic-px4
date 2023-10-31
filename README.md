@@ -66,7 +66,8 @@ sudo apt-get install vim
 sudo apt update
 sudo apt install git
 git clone https://github.com/PX4/PX4-Autopilot.git --recursive
-
+```
+```sh
 bash ./PX4-Autopilot/Tools/setup/ubuntu.sh
 ```
 
@@ -82,6 +83,8 @@ sudo apt-get install protobuf-compiler libeigen3-dev libopencv-dev -y
 
 ```sh
 sudo apt-get install ros-noetic-mavros ros-noetic-mavros-extras ros-noetic-mavros-msgs
+```
+```sh
 wget https://raw.githubusercontent.com/mavlink/mavros/master/mavros/scripts/install_geographiclib_datasets.sh
 sudo bash ./install_geographiclib_datasets.sh   
 ```
