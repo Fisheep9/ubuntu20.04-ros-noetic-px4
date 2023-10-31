@@ -55,7 +55,7 @@ sudo docker run -it --network host --privileged \
 ros:noetic
 
 sudo apt-get update
-sudo apt-get install vim
+sudo apt-get install vim -y
 ```
 
 [换源](https://www.yisu.com/ask/4042.html)
@@ -64,7 +64,7 @@ sudo apt-get install vim
 
 ```sh
 sudo apt update
-sudo apt install git
+sudo apt install git -y
 git clone https://github.com/PX4/PX4-Autopilot.git --recursive
 ```
 ```sh
@@ -82,9 +82,7 @@ sudo apt-get install protobuf-compiler libeigen3-dev libopencv-dev -y
 [mavros安装](https://docs.px4.io/main/en/ros/mavros_installation.html)
 
 ```sh
-sudo apt-get install ros-noetic-mavros ros-noetic-mavros-extras ros-noetic-mavros-msgs
-```
-```sh
+sudo apt-get install ros-noetic-mavros ros-noetic-mavros-extras ros-noetic-mavros-msgs -y
 wget https://raw.githubusercontent.com/mavlink/mavros/master/mavros/scripts/install_geographiclib_datasets.sh
 sudo bash ./install_geographiclib_datasets.sh   
 ```
@@ -92,14 +90,14 @@ sudo bash ./install_geographiclib_datasets.sh
 rviz安装
 
 ```sh
-sudo apt-get install ros-noetic-rviz
+sudo apt-get install ros-noetic-rviz -y
 ```
 
 pcl安装
 
 ```sh
 sudo apt -y install libpcl-dev
-sudo apt install ros-noetic-pcl-conversions
+sudo apt install ros-noetic-pcl-conversions -y
 ```
 
 修改cpp中node_vis.header.frame_id = "world";
@@ -107,7 +105,7 @@ sudo apt install ros-noetic-pcl-conversions
 rqt_graph安装
 
 ```sh
-sudo apt-get install ros-noetic-rqt-graph
+sudo apt-get install ros-noetic-rqt-graph -y
 ```
 
 
