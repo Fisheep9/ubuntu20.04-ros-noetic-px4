@@ -30,7 +30,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 ```
 
 ```sh
-docker build -t ros:v1 .
+docker build -t ros:noetic .
 ```
 
 在ARM上直接NAS拉镜像
