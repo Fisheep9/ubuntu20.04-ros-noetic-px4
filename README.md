@@ -56,8 +56,10 @@ sudo apt-get install vim
 [PX4安装](https://docs.px4.io/main/en/dev_setup/dev_env_linux_ubuntu.html#ros-gazebo-classic)
 
 ```sh
+sudo apt update
 sudo apt install git
 git clone https://github.com/PX4/PX4-Autopilot.git --recursive
+
 bash ./PX4-Autopilot/Tools/setup/ubuntu.sh
 ```
 
