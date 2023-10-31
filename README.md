@@ -33,6 +33,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 docker build -t ros:v1 .
 ```
 
+直接NAS拉镜像
+```sh
+docker load -i ~/Downloads/hilab_v2.tar
+```
+
 启动容器
 
 ```sh
