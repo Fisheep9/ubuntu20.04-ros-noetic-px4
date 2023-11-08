@@ -124,12 +124,15 @@ nvidia-smi
 ```sh
 /usr/local/cuda/bin/nvcc --version
 ```
+
 vim ~/.bashrc添加CUDA进环境
+
 ```sh
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-12/lib64
-export CUDA_HOME=/usr/local/cuda-12
-export PATH=$PATH:/usr/local/cuda-12/bin
+export PATH=/usr/local/cuda-12.3/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda-12.3/lib64\
+${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 ```
+
 [CUDA安装](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/)
 
 [conatiner-toolkit安装？这个不知道装了有什么用](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html)
