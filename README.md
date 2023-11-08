@@ -49,7 +49,7 @@ docker load -i ~/Downloads/hilab_v2.tar
 
 ```sh
 sudo docker run -it --network host --privileged \
---runtime=nvidia \
+--gpus all \
 --env="DISPLAY" \
 --env="QT_X11_NO_MITSHM=1" \
 --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
@@ -111,26 +111,45 @@ sudo apt-get install ros-noetic-rqt-graph -y
 
 docker支持gpu需要以下配置：
 
+注意：docker run 需要添加参数 `--gpus all`
+
+容器内可以读显卡
+```sh
+nvidia-smi
+```
+
+[CUDA Toolkit安装 只装Base Installer CUDA 工具包包含创建、构建和运行 CUDA 应用程序所需的 CUDA 驱动程序和工具以及库、头文件和其他资源](https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=20.04&target_type=deb_local)
+
+验证CUDA是否安装成功
+```sh
+/usr/local/cuda/bin/nvcc --version
+```
+vim ~/.bashrc添加CUDA进环境
+```sh
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-12/lib64
+export CUDA_HOME=/usr/local/cuda-12
+export PATH=$PATH:/usr/local/cuda-12/bin
+```
 [CUDA安装](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/)
 
-[conatiner-toolkit安装](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html)
+[conatiner-toolkit安装？这个不知道装了有什么用](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html)
 
-注意：docker run 需要添加参数 `--runtime=nvidia`
 
 安装PaddlePaddle的gpu版本（CUDA10.2）
 
 ```sh
+sudo apt-get update
+sudo apt-get install git -y
 sudo apt-get install python3-pip -y
+sudo apt-get install ubuntu-drivers-common -y
 python3 -m pip install paddlepaddle-gpu==2.3.2 -i https://mirror.baidu.com/pypi/simple
 ```
 ```sh
-python -c "import paddle; print(paddle.__version__)"
+python3 -c "import paddle; print(paddle.__version__)"
 ```
 安装Paddledection
 
 ```sh
-sudo apt-get update
-sudo apt-get install git -y
 # Clone PaddleDetection repository
 cd <path/to/clone/PaddleDetection>
 git clone https://github.com/PaddlePaddle/PaddleDetection.git
@@ -148,7 +167,7 @@ pip install numba==0.56.4
 sudo apt-get install wget
 
 # After installation, make sure the tests pass:
-python ppdet/modeling/tests/test_architectures.py
+python3 ppdet/modeling/tests/test_architectures.py
 ```
 
 
