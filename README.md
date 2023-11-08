@@ -109,4 +109,49 @@ rqt_graph安装
 sudo apt-get install ros-noetic-rqt-graph -y
 ```
 
+docker支持gpu需要以下配置：
+
+[CUDA安装](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/)
+
+[conatiner-toolkit安装](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html)
+
+注意：docker run 需要添加参数 `--runtime=nvidia`
+
+安装PaddlePaddle的gpu版本（CUDA10.2）
+
+```sh
+sudo apt-get install python3-pip -y
+python3 -m pip install paddlepaddle-gpu==2.3.2 -i https://mirror.baidu.com/pypi/simple
+```
+```sh
+python -c "import paddle; print(paddle.__version__)"
+```
+安装Paddledection
+
+```sh
+sudo apt-get update
+sudo apt-get install git -y
+# Clone PaddleDetection repository
+cd <path/to/clone/PaddleDetection>
+git clone https://github.com/PaddlePaddle/PaddleDetection.git
+
+# Install other dependencies
+cd PaddleDetection
+pip install -r requirements.txt
+
+# Compile and install paddledet
+python3 setup.py install
+
+sudo apt-get update
+sudo apt-get install libgl1-mesa-glx
+pip install numba==0.56.4
+sudo apt-get install wget
+
+# After installation, make sure the tests pass:
+python ppdet/modeling/tests/test_architectures.py
+```
+
+
+
+
 
